@@ -1,37 +1,44 @@
-# IngeniousHackathon_Tritons
+# IngeniousHackathon_Tritons #
 
-##Aim: To build a category predictor. The input is in the form of text description. We need to classify the category which the text belongs.
-The categories are CPV's of goods as formulated by European Union. This is helpful for categorising government tendors into different product categories. 
+__Aim__: To build a category predictor. Classify the text description into pre-defined categories.
 
+__Application__: Categorize government tendors' ads(descriptions) into CPV's of goods. CPV's are codes assigned to goods by European Union. The CPV establishes a single classification system for public procurement aimed at standardising the references used by contracting authorities and entities to describe the subject of procurement contracts. [More about CPV](https://simap.ted.europa.eu/cpv)
 
-##Approach:
+This will be helpful for categorizing government tendors into different product categories which presently,is performed manually.
+
+## Approach:
 Given a description, we will first find the product which describes it. Then find the assigned CPV of that product.
 
-The CPV consists of a main vocabulary and a supplementary vocabulary.
 
-The main vocabulary is based on a tree structure comprising codes of up to nine digits associated with a wording that describes the supplies, works or services forming the subject of the contract.
-
-    The first two digits identify the divisions (XX000000-Y);
-    The first three digits identify the groups (XXX00000-Y);
-    The first four digits identify the classes (XXXX0000-Y);
-    The first five digits identify the categories (XXXXX000-Y);
-
-Each of the last three digits gives a greater degree of precision within each category.
-
-##Setting the Design Philosophy of a categoriser:
+## Step 1: Setting the Design Philosophy of a categoriser:
 Find the probability of categories which the description belongs to. 
+
 In order to classify on the basis of probability, we have two methods:
 1. Use LSTM. Extract the hidden layer from last block. Use this feature map as an input to fully connected layers and subsequently train it to make a prediction.
 2. Use methods of Natural Language Processing.
   a. Remove stop words.
   b. Stemming
   c. TF-IDF
-  d. Find frequently used words  after a,b,c.
- We are deciding the other methods and parameters for categorisation.
+  d. Find frequently used words after a,b,c
+  and many more.
  
- Method 1, that is using LSTM will prove ineffective due to lack of data. It requires a lot of data to train LSTM and fully connected layers. So we decided to switch to method 2.
- Currently, we do not have a dataset.
- In subsequent hours, we will be building a small dataset including 5-6 categories. 
+Method 1, that is using LSTM will prove ineffective due to lack of data. It requires a lot of data to train LSTM and fully connected layers. So we decided to switch to method 2. 
+
+## Step 2: Building a basic Categorization tool
+We tried building a basic category predictor using Method 2 described above. We employed Multinomial Naive Bayes Classifier and NLP techniques on the text(2c and 2d). We temporarily used "fetch_20 news groups"_ available in sklearn library of python. You can find the code in [baseline.ipynb](https://github.com/Maitreyapatel/IngeniousHackathon_Tritons/blob/master/baseline.ipynb).
+
+## Step 3: Build a small dataset manually
+Presently, we do not have a dataset with text descriptions and CPV's of goods, so we decided to build a small dataset for trial runs.
+
+Method of building dataset:
+1. Choose 5 categories.
+2. Choose a few sub-categories under each one.
+3. Manually collect text descriptions of sub categories for all the main categories.
+This resulted us in 12 descriptions per main category. In total we have, 60 instances(12*5) in our final dataset.
+
+Categories we chose: Construction Work, Agriculture, Clothing, IT Services, Financial Services
+
+## Step 4: Running our basic categorizer on new dataset
  
 
 
