@@ -1,0 +1,36 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+  <title> Summarizer </title>
+{% endblock %}
+
+
+{% block content %}
+  <style>
+    html,body{
+      height: 100%;
+      background: linear-gradient( #F28F7F, white,#F28F7F);
+    }
+  </style>
+
+
+  <div class="container">
+    <h1>Categorizer</h1>
+    <p></p>
+
+    <div class="row">
+      <form class="col s6 offset-s3" method="post" action="">
+        <div class="row">
+          <div class="input-field col s12">
+            <textarea id="textarea1" name="desc" class="materialize-textarea"></textarea>
+            <label for="textarea1">Enter description</label>
+          </div>
+        </div>
+        <button type="submit" name="button" class="waves-effect waves-light btn">Find</button>
+      </form>
+    </div>
+  </div>
+{% endblock %}
+
+{% block enter %}
+{% endblock %}

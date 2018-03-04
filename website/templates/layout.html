@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!--Import Google Icon Font-->
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Hind+Guntur|Megrim" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css"  media="screen,projection"/>
+    {% block title %}
+      <title> Intro </title>
+    {% endblock %}
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  </head>
+
+  <body>
+    <nav style="background-color:rgb(64, 91, 122)" >
+      <div class="nav-wrapper "  >
+        <a href="/main" class="brand-logo" style="padding-left:20px;">Tritons</a>
+        <style media="screen">
+          .brand-logo{
+            font-family: 'Hind Guntur', sans-serif;
+            font-family: 'Megrim', cursive;
+          }
+        </style>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+
+          <li><a href="#" style="margin-right:30px;"> About Us </a></li>
+        </ul>
+      </div>
+    </nav>
+
+
+    {% block content %}
+    {% endblock %}
+
+    {% block enter %}
+    {% endblock %}
+
+    {% block result %}
+    {% endblock %}
+
+    {% block restart %}
+    {% endblock %}
+    <!--Import jQuery before materialize.js-->
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+         $('.slider').slider();
+       });
+    </script>
+  </body>
+</html>
