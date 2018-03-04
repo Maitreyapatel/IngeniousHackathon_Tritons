@@ -39,6 +39,9 @@ This resulted us in 12 descriptions per main category. In total we have, 60 inst
 Categories we chose: Construction Work, Agriculture, Clothing, IT Services, Financial Services
 
 ## Step 4: Running our basic categorizer on new dataset
- 
+## Step 5: Stemming the input data
+Stemming will enable us to extract useful statistics to analyze the input text. The goal of a stemmer is to reduce words in their different forms into a common base form. It is basically a heuristic process that cuts off the ends of words to extract their base forms. 
+Result: The keywords does not include redundant words like 'and' , 'the', 'is', 'to' and so on. The top keywords are now more relevant to the reviews.
 
+## Step 6: Linking the output categories to CPV codes
 
